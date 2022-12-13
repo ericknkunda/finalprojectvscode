@@ -10,8 +10,10 @@ $phoneAddress=$_POST['phone'];
 $emailAddress =$_POST['email_address'];
 $userGender =$_POST['gender'];
 $userAgeRange =$_POST['age_range'];
-$insertQuerry =$conn->prepare("insert into tbl_user(user_name, phone, email_address, gender, age_range) 
-values('".$userName."', '".$phoneAddress."', '".$emailAddress."', '".$userGender."','".$userAgeRange."');");
+$code = $_POST['code'];
+
+$insertQuerry =$conn->prepare("insert into tbl_user(user_name, phone, email_address, gender, age_range, code, code_status) 
+values('".$userName."', '".$phoneAddress."', '".$emailAddress."', '".$userGender."','".$userAgeRange."','".$code."', 1);");
 $insertQuerry->execute();
 if($insertQuerry){
     echo"inserted \n";
