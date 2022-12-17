@@ -33,14 +33,14 @@ $data=array(
   $httpcode=curl_getinfo($ch,CURLINFO_HTTP_CODE);
   curl_close($ch);
 
-               if($httpcode == 200) {
-$insertQuerry ="insert into tbl_user(user_name, phone, email_address, gender, age_range, code, code_status) 
-values('".$userName."', '".$phoneAddress."', '".$emailAddress."', '".$userGender."','".$userAgeRange."','".$code."','1');";
-$insert=$conn->prepare($insertQuerry);
-$insert->execute();
-if($insert){
-    //echo"inserted \n";
-    echo json_encode(array("username"=>$userName,"phone"=>$phoneAddress,"email"=>$emailAddress,"usersgender"=>$userGender,"userAge"=>$userAgeRange,"code"=>$code,"code_status"=>1));
+    if($httpcode == 200) {
+    $insertQuerry ="insert into tbl_user(user_name, phone, email_address, gender, age_range, code, code_status) 
+    values('".$userName."', '".$phoneAddress."', '".$emailAddress."', '".$userGender."','".$userAgeRange."','".$code."','1');";
+    $insert=$conn->prepare($insertQuerry);
+    $insert->execute();
+    if($insert){
+        //echo"inserted \n";
+        echo json_encode(array("username"=>$userName,"phone"=>$phoneAddress,"email"=>$emailAddress,"usersgender"=>$userGender,"userAge"=>$userAgeRange,"code"=>$code,"code_status"=>1));
 
 }
 else{
