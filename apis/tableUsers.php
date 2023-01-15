@@ -12,7 +12,7 @@ $userGender =$_POST['gender'];
 $userAgeRange =$_POST['age_range'];
 $code = $_POST['code'];
 
-$insertQuerry =$conn->prepare("insert into tbl_user(user_name, phone, email_address, gender, age_range, code, code_status) 
+$insertQuerry =$conn->prepare("insert into fp_tbl_user(user_name, phone, email_address, gender, age_range, code, code_status) 
 values('".$userName."', '".$phoneAddress."', '".$emailAddress."', '".$userGender."','".$userAgeRange."','".$code."', 1);");
 $insertQuerry->execute();
 if($insertQuerry){

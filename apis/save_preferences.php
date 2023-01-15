@@ -4,7 +4,7 @@ $profileId=$_REQUEST['profile_id'];
 $itemClass =(array)$_REQUEST['item_class'];
 $date =date('Y:m:d H:i:s');
 foreach($itemClass as $item) {
-$recordPref =$conn->prepare("insert into profile_preferences(profile_id, item_class, date_of_addition)
+$recordPref =$conn->prepare("insert into fp_profile_preferences(profile_id, item_class, date_of_addition)
 values('".$profileId."', '".$item."', '".$date."')");
 $recordPref->execute();
 }

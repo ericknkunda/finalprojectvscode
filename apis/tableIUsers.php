@@ -34,7 +34,7 @@ $data=array(
   curl_close($ch);
 
     if($httpcode == 200) {
-    $insertQuerry ="insert into tbl_user(user_name, phone, email_address, gender, age_range, code, code_status) 
+    $insertQuerry ="insert into fp_tbl_user(user_name, phone, email_address, gender, age_range, code, code_status) 
     values('".$userName."', '".$phoneAddress."', '".$emailAddress."', '".$userGender."','".$userAgeRange."','".$code."','1');";
     $insert=$conn->prepare($insertQuerry);
     $insert->execute();

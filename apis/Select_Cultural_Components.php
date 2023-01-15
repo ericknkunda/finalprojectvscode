@@ -7,7 +7,7 @@
 require_once ("../../finalproject/db_connection.php");
 
 $components=array();
-$selectCat =$conn->prepare("select classification_id, classification_name from cultural_components_classification");
+$selectCat =$conn->prepare("select classification_id, classification_name from fp_cultural_components_classification");
 $selectCat->execute();
 $counter =$selectCat->rowCount();
 // if($counter>0){
