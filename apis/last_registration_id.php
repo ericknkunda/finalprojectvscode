@@ -1,7 +1,7 @@
 <?php
 require_once("../../finalproject/db_connection.php");
 $select =$conn->prepare("select registration_id from fp_tbl_user where registration_id =
-(select max(registration_id) from tbl_user)");
+(select max(registration_id) from fp_tbl_user)");
 $select->execute();
 //$components[];
 while($fetch=$select->fetch()){

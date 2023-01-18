@@ -34,11 +34,11 @@ $data=array(
   curl_close($ch);
 
     if($httpcode == 200) {
-    $insertQuerry ="insert into fp_tbl_user(user_name, phone, email_address, gender, age_range, code, code_status) 
-    values('".$userName."', '".$phoneAddress."', '".$emailAddress."', '".$userGender."','".$userAgeRange."','".$code."','1');";
-    $insert=$conn->prepare($insertQuerry);
-    $insert->execute();
-    if($insert){
+    $insertQuerry =$conn->prepare("insert into fp_tbl_user(user_name, phone, email_address, gender, age_range, code, code_status) 
+    values('".$userName."', '".$phoneAddress."', '".$emailAddress."', '".$userGender."','".$userAgeRange."','".$code."','1');");
+    
+    $insertQuerry->execute();
+    if($insertQuerry){
         //echo"inserted \n";
         echo json_encode(array("username"=>$userName,"phone"=>$phoneAddress,"email"=>$emailAddress,"usersgender"=>$userGender,"userAge"=>$userAgeRange,"code"=>$code,"code_status"=>1));
 
@@ -48,5 +48,4 @@ else{
 }
                }
 
-$conn=null;
 ?>
