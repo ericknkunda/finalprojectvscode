@@ -44,7 +44,7 @@ $data=array(
 
 }
 else{
-    echo"something went wrong<br>";
+    echo json_encode(array("Error"=>"something went wrong<br>"));
 }
                }
 

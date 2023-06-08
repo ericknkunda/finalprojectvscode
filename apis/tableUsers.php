@@ -21,7 +21,7 @@ if($insertQuerry){
 
 }
 else{
-    echo"something went wrong<br>";
+    echo json_encode(array("Error"=>"omething went wrong"));
 }
 
 //$conn->close;
